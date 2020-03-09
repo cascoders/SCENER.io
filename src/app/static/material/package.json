@@ -1,0 +1,17 @@
+{
+  "name": "material-kit-pro",
+  "description": "Premium Bootstrap 4 Material Design",
+  "version": "3.0.0",
+  "homepage": "http://creative-tim.com/product/material-kit-pro",
+  "author": "Creative Tim",
+  "license": "Creative Tim License <www.creative-tim.com/license>",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-install": "^1.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-open": "^3.0.1"
+  }
+}

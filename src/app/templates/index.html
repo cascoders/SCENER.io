@@ -1,0 +1,269 @@
+{% extends "layouts/base.html" %}
+{% block title %}Scenery{% endblock %}
+{% block content %}
+<div
+   class="page-header header-filter"
+   data-parallax="true"
+   style="background-image: url('../static/material/assets/img/bg3.jpg')"
+   >
+   <div class="container">
+      <div class="row">
+         <div class="col-md-8 ml-auto mr-auto">
+            <div class="brand text-center">
+               <h1>SCENERY</h1>
+               <h3 class="title text-center">Image Classification for Humans</h3>
+               <p>
+                  <button
+                     class="btn btn-primary"
+                     type="button"
+                     data-toggle="collapse"
+                     id="train"
+                     data-target="#collapseExample"
+                     aria-expanded="false"
+                     aria-controls="collapseExample"
+                     >
+                  Train
+                  </button>
+                  <button
+                     class="btn btn-primary"
+                     type="button"
+                     data-toggle="collapse"
+                     id="predict"
+                     data-target="#collapseExample2"
+                     aria-expanded="false"
+                     aria-controls="collapseExample2"
+                     >
+                  Predict
+                  </button>
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="collapse show" id="traincontent">
+   <div class="main main-raised">
+      <div class="container">
+         <div class="section text-center">
+            <h2 class="title">Customization Parameters</h2>
+            <form action='/custom' method='POST'>
+            <h3 class="title text-center">
+               1)Argumentation Settings
+            </h3>
+            
+               <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                     <h4 class="title">Image Rotation</h4>
+                     <input type="number" min="1" max="40" value="10" step="1" name="imagerotation" class="form-control" />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                     <h4 class="title">Zoom Range</h4>
+                     <input type="number" min="0" max="1" value="0.1" step="0.1" name='zoomrange' data-decimals="1" class="form-control" />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                     <h4 class="title">Width shift range</h4>
+                     <input type="number" min="0" max="1" value="0.1" step="0.1" name='widthshift' data-decimals="1" class="form-control" />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                     <h4 class="title">Horizontal shift range</h4>
+                     <input type="number" min="0" max="1" value="0.1" step="0.1" name='horizantalshift' data-decimals="1" class="form-control" />
+                  </div>
+                  <div class="col-md-4 mb-3">
+                     <h4 class="title">Horizantal Flip</h4>
+                     <div class="form-check form-check-radio form-check-inline">
+                        <label class="form-check-label title">
+                        <input class="form-check-input" type="radio"  name='horizantalflip' value="true"> On
+                        <span class="circle">
+                        <span class="check"></span>
+                        </span>
+                        </label>
+                     </div>
+                     <div class="form-check form-check-radio form-check-inline">
+                        <label class="form-check-label title ">
+                        <input class="form-check-input" type="radio" checked  name='horizantalflip' value="false"> Off
+                        <span class="circle">
+                        <span class="check"></span>
+                        </span>
+                        </label>
+                     </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                     <h4 class="title">Vertical Flip</h4>
+                     <div class="form-check form-check-radio form-check-inline">
+                        <label class="form-check-label title">
+                        <input class="form-check-input" type="radio"  name='verticalflip' value="option1"> On
+                        <span class="circle">
+                        <span class="check"></span>
+                        </span>
+                        </label>
+                     </div>
+                     <div class="form-check form-check-radio form-check-inline">
+                        <label class="form-check-label title ">
+                        <input class="form-check-input" type="radio" checked name='verticalflip' value="option2"> Off
+                        <span class="circle">
+                        <span class="check"></span>
+                        </span>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               <h3 class="title text-center">
+               2)Select Model
+            </h3>
+            
+              <div class="row">
+            <div class="col-md-4">
+              <div class="card card-blog">
+                <div class="card-header card-header-image">
+                  <a href="#pablo">
+                    <img src="../static/img/cnn.png" alt="">
+                  </a>
+                <div class="colored-shadow" style="background-image: url(&quot;../static/material/assets/img/examples/color1.jpg&quot;); opacity: 1;"></div></div>
+                <div class="card-body">
+                  <h6 class="card-category text-warning">accuracy will be moderate</h6>
+                  <h4 class="card-title">
+                    <a href="#pablo">High Speed Simple CNN </a>
+                  </h4>
+                </div>
+              </div>
+              <div class="form-check form-check-radio">
+    <label class="form-check-label">
+        <input class="form-check-input" type="radio" checked name="model" id="exampleRadios1" value="simplecnn" >
+        
+        <span class="circle">
+            <span class="check"></span>
+        </span>
+    </label>
+</div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-blog">
+                <div class="card-header card-header-image">
+                  <a href="#pablo">
+                    <img src="../static/img/scnn.jpeg" alt="">
+                  </a>
+                <div class="colored-shadow" style="background-image: url(&quot;../static/material/assets/img/examples/color2.jpg&quot;); opacity: 1;"></div></div>
+                <div class="card-body">
+                  <h6 class="card-category text-rose">Training will take time!</h6>
+                  <h4 class="card-title">
+                    <a href="#pablo">High Accuracy CNN</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="form-check form-check-radio">
+    <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="model" id="exampleRadios1" value="fastcnn" >
+        
+        <span class="circle">
+            <span class="check"></span>
+        </span>
+    </label>
+</div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-blog">
+                <div class="card-header card-header-image">
+                  <a href="#pablo">
+                    <img src="../static/img/resnet.png" height="212px" width="320px" alt="">
+                  </a>
+                <div class="colored-shadow" style="background-image: url(&quot;../static/material/assets/img/examples/color3.jpg&quot;); opacity: 1;"></div></div>
+                <div class="card-body ">
+                  <h6 class="card-category text-info">Highest Accuracy but training will take time</h6>
+                  <h4 class="card-title">
+                    <a href="#pablo">Resnet50</a>
+                  </h4>
+                </div>
+              </div>
+              <div class="form-check form-check-radio">
+    <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="model" id="exampleRadios1" value="resnet" >
+        
+        <span class="circle">
+            <span class="check"></span>
+        </span>
+    </label>
+</div>
+            </div>
+          </div>
+
+          <h3 class="title text-center">
+               3)Customization
+            </h3>
+            
+               <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                     <h4 class="title">Batch Size</h4>
+ <select class="form-control selectpicker" data-style="btn btn-link" name='batchsize' id="exampleFormControlSelect1">
+      <option>16</option>
+      <option>32</option>
+      <option>64</option>
+      <option>128</option>
+      <option>256</option>
+    </select>
+                    </div><div class="col-md-4 mb-3">
+                     <h4 class="title">Hidden layer activation function</h4>
+ <select class="form-control selectpicker" data-style="btn btn-link" name='hiddenlayer' id="exampleFormControlSelect1">
+      <option>sigmoid</option>
+      <option>relu</option>
+      <option>tanh</option>
+      <option>selu</option>
+    </select>
+                    </div>
+                  <div class="col-md-4 mb-3">
+                     <h4 class="title">EPOCHS</h4>
+                     <input type="number" min="1" max="100" value="30" name='epochs' step="1" class="form-control" />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                     <h4 class="title">Steps per Epoch range</h4>
+                     <select class="form-control selectpicker" data-style="btn btn-link" name='stepsepoch' id="exampleFormControlSelect1">
+      <option>8</option>
+                      <option>16</option>
+      <option>32</option>
+      <option>64</option>
+      <option>128</option>
+      <option>256</option>
+      <option>512</option>
+    </select>
+                    </div>
+                 <div class="col-md-6 mb-3">
+                     <h4 class="title">Validation steps</h4>
+                     <select class="form-control selectpicker" data-style="btn btn-link" name='validation' id="exampleFormControlSelect1">
+      <option>8</option>
+                      <option>16</option>
+      <option>32</option>
+      <option>64</option>
+      <option>128</option>
+      <option>256</option>
+      <option>512</option>
+    </select>
+            
+                    </div>
+                    <div class="col-md-12 justify-content-center">
+                                          <button type="submit" class="btn btn-primary">Train Model</button>
+
+                    </div>
+               </div>
+          
+           
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+<div class="collapse" id="predictcontent">
+   <div class="main main-raised">
+      <div class="container">
+         <div class="section text-center">
+          {{ dropzone.create(action='upload') }}
+            <div class="row"><div class="col-md-12 justify-content-center">
+               <form action="/result" method="POST">
+                           <button type="submit" class="btn btn-primary">Predict Output</button>
+               </form>
+                    </div></div>
+        </div>
+         
+      </div>
+   </div>
+</div>
+{% endblock %}
