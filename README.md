@@ -1,5 +1,5 @@
 <h3 align="center">
-<img width=200px height=200px src="./src/app/static/material/assets/img/bg3.jpg"></a><br>
+<img width=300px height=200px src="./src/app/static/material/assets/img/bg3.jpg"></a><br>
 SCENER.io
 </h3>
 <div align="center">
