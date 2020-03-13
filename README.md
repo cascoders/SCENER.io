@@ -11,6 +11,7 @@ Customise Your CNN like never before
 - UI that can run inference using the model trained unseen and unlabeled images uploaded at the same time.
 - Models Can be deployed on any Cloud [ GCP,AWS,AZURE,DO]
 - User Can change 15+ parameters of training
+- Fast classification using cloud based architecture
 
 <div align="center">
 <h3> Models Used </h3>
@@ -22,7 +23,7 @@ Customise Your CNN like never before
 
 ### Installation
 
-> This project is self Hosted project.You can host this project on your own servers. Installation steps will be provided soon.
+> This project is self Hosted project.You can host this project on your own servers. Installation steps will be provided soon. 
 
 ### Challenges we ran into :
 
