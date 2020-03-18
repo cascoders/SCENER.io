@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt
 import boto3
 
 def predict_res():
-    ACCESS_KEY = "AKIASKDKDS3L3CMBH6F6"
-    SECRET_KEY = "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"
+    ACCESS_KEY = "access key"
+    SECRET_KEY = "secret key"
 
     s3 = boto3.client(
         's3',
