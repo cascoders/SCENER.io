@@ -54,3 +54,4 @@ UI to run another round of inference
 
 - Recognition : [DJCSI Codeshastra 6.0](https://djcsi-codeshastra.netlify.com)
 
+<h3 align="center"><b>Developed with :heart: by <a href="https://github.com/pushpak1300">Pushpak Chhajed </a> , <a href="https://github.com/yogendra-yatnalkar"> Yogendra Yatnalkar</a> , <a href="https://github.com/tanmay8266">Tanmay Rane</a> and <a href="https://github.com/HanozDar">Hanoz </a>.</b></h1>
